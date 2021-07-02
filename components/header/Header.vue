@@ -2,9 +2,8 @@
 <header>
   <HeaderLogo/>
   <div class="cta">
-    <NuxtLink to="/" class="btn btn-outline">Iniciar Sesión</NuxtLink>
+    <NuxtLink to="/login" class="btn btn-outline">Iniciar Sesión</NuxtLink>
     <NuxtLink to="/" class="btn btn-primary ml-3">Crear cuenta</NuxtLink>
-
   </div>
 </header>
 </template>
