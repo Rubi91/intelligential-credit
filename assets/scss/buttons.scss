@@ -1,0 +1,37 @@
+@import "colors";
+/* =============================================================================
+  Buttons
+  ========================================================================== */
+.btn {
+  border: none;
+  color: $white;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border-radius: 4px;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  padding: .50rem .80rem;
+
+
+}
+.btn-primary {
+  border: 1px solid $aquamarine;
+  background-color: $persian-green;
+
+  &:hover {
+    background-color: $aqua;
+    border: 1px solid $aquamarine;
+  }
+}
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid hsla(0,0%,100%,.5);
+
+  &:hover {
+    background-color: $raven;
+  }
+}

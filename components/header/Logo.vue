@@ -13,12 +13,12 @@
   align-items: center;
   .txt-logo {
     color: $white;
-    font-size: small;
     margin-left: 5px;
+    font-size: medium;
     font-family: $font-md
   }
 }
 .nuxt-logo {
-  height: 15px;
+  height: 30px;
 }
 </style>

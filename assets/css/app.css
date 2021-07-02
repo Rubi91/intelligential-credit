@@ -1,8 +1,31 @@
+/* =============================================================================
+  General Selectors
+  ========================================================================== */
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-
+html {
+  color: #fff;
+  line-height: 1;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  font-stretch: normal;
+  font-family: 'Roboto';
+  letter-spacing: normal;
+}
 body {
   margin: 0;
+}
+
+/* =============================================================================
+  General Class
+  ========================================================================== */
+.ml-1 {
+  margin-left: 4px;
+}
+.ml-3 {
+  margin-left: 12px;
 }
