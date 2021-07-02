@@ -2,8 +2,8 @@
 <header>
   <HeaderLogo/>
   <div class="cta">
-    <NuxtLink to="/" class="btn btn-outline">Login</NuxtLink>
-    <NuxtLink to="/" class="btn btn-primary ml-3">Sign Up</NuxtLink>
+    <NuxtLink to="/" class="btn btn-outline">Iniciar Sesión</NuxtLink>
+    <NuxtLink to="/" class="btn btn-primary ml-3">Crear cuenta</NuxtLink>
 
   </div>
 </header>
@@ -15,7 +15,6 @@
 header {
   display: flex;
   padding: 10px 25px;
-  background: $charcoal;
   justify-content: space-between;
 }
 </style>
