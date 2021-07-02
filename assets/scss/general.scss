@@ -1,5 +1,6 @@
 .content {
   display: flex;
+  overflow-y: auto;
   align-items: center;
   justify-content: center;
   height: calc(100vh - 36px);
