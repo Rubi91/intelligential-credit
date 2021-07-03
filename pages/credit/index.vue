@@ -101,6 +101,7 @@ export default {
 
   &-module {
     display: flex;
+    margin: 0 2rem;
     flex-basis: 80%;
     flex-direction: row;
     justify-content: center;
@@ -119,7 +120,7 @@ export default {
 
   &-interior_number,
   &-exterior_number {
-    width: 10rem;
+    max-width: 10rem;
   }
 }
 
@@ -132,6 +133,21 @@ export default {
   &-subtitle {
     color: $raven;
     margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  .section {
+    &-module {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &-interior_number,
+    &-exterior_number,
+    &-subfield {
+      max-width: 400px;
+    }
   }
 }
 </style>
