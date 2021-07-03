@@ -3,11 +3,11 @@
     <div class="card">
       <img src="/images/bg-circle.svg" alt="Bubbles Img Login">
 
-      <form action="#" class="form">
+      <form class="form" v-on:submit.prevent="loginForm">
         <h3 class="form-title">Iniciar Sesión</h3>
         <div class="field">
-          <label for="sessions_email" class="label">Correo electrónico</label>
-          <input id="sessions_email" class="input" placeholder="bienvenido@credito.com" type="text" name="email"
+          <label for="email" class="label">Correo electrónico</label>
+          <input id="email" class="input" placeholder="bienvenido@credito.com" type="email" name="email" v-model="email"
                  autocomplete="off" required>
         </div>
 
@@ -20,7 +20,10 @@
           ¿Aún no estás registrado?
           <NuxtLink class="link" to="/signup"><b>Regístrate aquí</b></NuxtLink>
         </p>
-        <button class="btn btn-primary">Login</button>
+        <button class="btn btn-primary" type="submit" :disabled="loading">{{
+            loading ? 'Enviando...' : 'Login'
+          }}
+        </button>
       </form>
     </div>
   </div>
@@ -29,13 +32,27 @@
 import {mapMutations} from 'vuex'
 
 export default {
-  computed: {
-    // ...
+  data() {
+    return {
+      email: '',
+      loading: false
+    };
   },
   methods: {
     ...mapMutations({
-      // ...
-    })
+      setUser: 'setUser',
+      setLoggedIn: 'setLoggedIn'
+    }),
+    loginForm() {
+      this.loading = true
+
+      setTimeout(() => {
+        this.setLoggedIn(true)
+        this.setUser(this.email)
+        this.$router.push('/')
+      }, 3000)
+
+    }
   }
 }
 </script>
