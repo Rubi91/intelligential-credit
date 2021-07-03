@@ -2,7 +2,7 @@
   <section class="hero">
     <h1 class="title flex-1">Tu crédito en línea.</h1>
     <p class="subtitle">La forma más fácil, rápida y segura.</p>
-    <button class="btn btn-primary px-4">Comenzar mi solicitud</button>
+    <NuxtLink class="btn btn-primary px-4" to="/credit">Comenzar mi solicitud</NuxtLink>
     <img src="/images/hero.png" class="img" alt="Crédito online">
   </section>
 </template>
