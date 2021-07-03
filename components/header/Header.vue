@@ -1,6 +1,6 @@
 <template>
 <header>
-  <HeaderLogo/>
+  <HeaderLogo light/>
   <HeaderProfileUser  v-if="isLoggedIn"/>
   <div v-else>
     <NuxtLink to="/login" class="btn btn-outline">Iniciar Sesión</NuxtLink>
@@ -12,6 +12,9 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  props: {
+    light: false
+  },
   computed: {
     ...mapGetters({
       isLoggedIn: 'getLoggedIn'

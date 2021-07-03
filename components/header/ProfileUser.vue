@@ -2,7 +2,7 @@
   <div class="user">
     <img src="/icons/user.png" alt="Account User" width="30px" height="30px">
     <div class="ml-3">
-      <span>{{ user }}</span>
+      <span>{{ email }}</span>
       <div @click="logout" class="btn-logout">Salir</div>
     </div>
   </div>
@@ -13,7 +13,7 @@ import {mapGetters, mapMutations} from 'vuex'
 export default {
   computed: {
     ...mapGetters({
-      user: 'getUser'
+      email: 'getEmail'
     })
   },
   methods: {

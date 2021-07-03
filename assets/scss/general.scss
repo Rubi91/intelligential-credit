@@ -1,3 +1,9 @@
+header {
+  display: flex;
+  padding: 10px 25px;
+  justify-content: space-between;
+}
+
 .content {
   display: flex;
   overflow-y: auto;
@@ -23,4 +29,9 @@
 .my-4 {
   margin-top: 16px;
   margin-bottom: 16px;
+}
+
+.my-2 {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }

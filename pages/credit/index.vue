@@ -1,9 +1,9 @@
 <template>
-  <div class="form-page">
+  <div>
     <h1 class="h1">Solicitud de crédito</h1>
     <p class="subheading">Escribe tus datos de contacto y los de tu empresa</p>
 
-    <form action="">
+    <form v-on:submit.prevent="sendForm">
       <section v-for="section in formData" :key="section.sectionId" class="section">
         <h1 class="section-title">{{ section.sectionName }}</h1>
 
@@ -11,7 +11,7 @@
           <div class="field section-field" v-for="field in section.fields">
             <label :for="field.key" class="label">{{ field.label }}</label>
             <input :id="field.key" class="input" :type="validateFieldType(field.type)" :name="field.key"
-                   autocomplete="off">
+                   v-model="form.user[field.key]" autocomplete="off">
           </div>
         </div>
 
@@ -24,26 +24,58 @@
                  :class="`section-${field.key}`">
               <label :for="field.key" class="label">{{ field.label }}</label>
               <input :id="field.key" class="input" :type="validateFieldType(field.type)" :name="field.key"
+                     v-model="form.user[field.key]"
                      autocomplete="off">
             </div>
           </div>
         </div>
       </section>
-      <button class="btn btn-primary form-page-btn">Solicitar crédito</button>
+      <button class="btn btn-primary page-btn" type="submit">{{
+          loading ? 'Enviando...' : 'Solicitar crédito'
+        }}
+      </button>
     </form>
 
   </div>
 </template>
 <script>
+import {mapGetters, mapMutations} from 'vuex'
 import data from '~/utilities/data.json'
 
 export default {
+  layout: 'light',
+  data() {
+    return {
+      loading: false,
+      form: {
+        user: []
+      }
+    };
+  },
   computed: {
+    ...mapGetters({
+      email: 'getEmail',
+      userData: 'getUser'
+    }),
     formData() {
       return data.form.sections
     }
   },
   methods: {
+    ...mapMutations({
+      setUser: 'setUser',
+      setLoggedIn: 'setLoggedIn'
+    }),
+    sendForm() {
+      this.loading = true
+      const {user} = this.form
+      const userInfo = {...user, email: this.email}
+      this.setUser(userInfo)
+      setTimeout(() => {
+        this.$router.push('/credit/detail')
+      }, 3000)
+
+    },
     validateFieldType(type) {
       if (type === 'string') {
         return 'text'
@@ -58,35 +90,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
-.form-page {
-  width: 100%;
-  display: flex;
-  background: $white;
-  flex-direction: column;
-
-  .h1 {
-    color: $midnight;
-    font-size: 3rem;
-    margin-top: 3rem;
-    flex-basis: 100%;
-    margin-bottom: 1rem;
-  }
-
-  .subheading {
-    color: $raven;
-    margin-top: 0;
-    font-size: 1.5rem;
-  }
-
-  &-btn {
-    margin: 4rem;
-    font-weight: 500;
-    font-size: 1.5rem;
-    padding: 0.5rem 2rem;
-  }
-}
-
 .section {
   &-title {
     font-weight: 700;

@@ -20,9 +20,8 @@
           ¿Aún no estás registrado?
           <NuxtLink class="link" to="/signup"><b>Regístrate aquí</b></NuxtLink>
         </p>
-        <button class="btn btn-primary" type="submit" :disabled="loading">{{
-            loading ? 'Enviando...' : 'Login'
-          }}
+        <button class="btn btn-primary" type="submit" :disabled="loading">
+          {{ loading ? 'Enviando...' : 'Login' }}
         </button>
       </form>
     </div>
@@ -40,7 +39,7 @@ export default {
   },
   methods: {
     ...mapMutations({
-      setUser: 'setUser',
+      setEmail: 'setEmail',
       setLoggedIn: 'setLoggedIn'
     }),
     loginForm() {
@@ -48,7 +47,7 @@ export default {
 
       setTimeout(() => {
         this.setLoggedIn(true)
-        this.setUser(this.email)
+        this.setEmail(this.email)
         this.$router.push('/')
       }, 3000)
 

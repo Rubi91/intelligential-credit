@@ -6,8 +6,8 @@
       <form class="form" v-on:submit.prevent="createAccount">
         <h3 class="form-title">Crear una cuenta</h3>
         <div class="field">
-          <label for="sessions_email" class="label">Correo electrónico</label>
-          <input id="sessions_email" class="input" placeholder="bienvenido@credito.com" type="text" name="email"
+          <label for="email" class="label">Correo electrónico</label>
+          <input id="email" class="input" placeholder="bienvenido@credito.com" type="text" name="email"
                  v-model="email"
                  autocomplete="off" required>
         </div>
@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     ...mapMutations({
-      setUser: 'setUser',
+      setEmail: 'setEmail',
       setLoggedIn: 'setLoggedIn'
     }),
     createAccount() {
@@ -55,7 +55,7 @@ export default {
 
       setTimeout(() => {
         this.setLoggedIn(true)
-        this.setUser(this.email)
+        this.setEmail(this.email)
         this.$router.push('/')
       }, 3000)
 

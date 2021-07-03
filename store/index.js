@@ -1,6 +1,7 @@
 export const state=()=>({
   loggedIn: false,
-  user: ''
+  email: '',
+  user: Object.create(null)
 })
 
 export const mutations= {
@@ -9,6 +10,9 @@ export const mutations= {
   },
   setUser(state, params) {
     state.user= params
+  },
+  setEmail(state, email) {
+    state.email= email
   }
 }
 
@@ -18,5 +22,8 @@ export const getters= {
   },
   getUser(state) {
     return state.user
+  },
+  getEmail(state) {
+    return state.email
   }
 }
