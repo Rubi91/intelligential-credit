@@ -1,5 +1,6 @@
 # Credit
 
+Check out the **(https://intelligential-credit.netlify.app)** to see it in action!
 ## Build Setup
 
 ```bash

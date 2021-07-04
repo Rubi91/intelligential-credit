@@ -1,0 +1,35 @@
+/* =============================================================================
+  General Selectors
+  ========================================================================== */
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+html {
+  color: #404040;
+  line-height: 1;
+  font-size: 12px;
+  font-style: normal;
+  text-align: center;
+  font-stretch: normal;
+  font-family: 'Roboto';
+  letter-spacing: normal;
+}
+body {
+  margin: 0;
+  background: #35374c;
+}
+
+/* =============================================================================
+  General Class
+  ========================================================================== */
+.px-4 {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+.ml-1 {
+  margin-left: 4px;
+}
+.ml-3 {
+  margin-left: 12px;
+}

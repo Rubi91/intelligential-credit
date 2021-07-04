@@ -24,6 +24,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/fonts/roboto.css',
+    '~/assets/css/app.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -39,8 +41,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/style-resources'
   ],
 
+  styleResources: {
+    scss: ['./assets/scss/*.scss']
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

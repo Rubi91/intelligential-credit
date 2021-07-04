@@ -1,0 +1,53 @@
+@import "variables";
+@import "colors";
+
+.form-title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.form-title,
+.form,
+.form-message {
+  padding: 0 30px;
+}
+
+.form-title {
+  padding-top: 5px;
+}
+
+.form {
+  padding: 20px;
+}
+
+.field {
+  display: flex;
+  margin-bottom: 15px;
+  flex-direction: column;
+}
+
+.input {
+  height: 40px;
+  outline: none;
+  appearance: none;
+  color: $dark-blue;
+  font-size: 1.2rem;
+  padding-left: 10px;
+  caret-color: $aqua;
+  border-radius: 6px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid $gainsboro;
+
+  &:focus {
+    border-color: $aquamarine;
+  }
+}
+
+.label {
+  font-size: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: $dark-blue;
+  margin-bottom: 7px;
+}
